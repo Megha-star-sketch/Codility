@@ -7,34 +7,22 @@
 package Codility;
 
 public class RemoveEle {
-	public void remove(int[] arr,int n,int val)
-	{
-		int[] a=new int[n];
-		int j=0;
-		for(int i=0;i<n-1;i++)
-		{
-			if(arr[i]!=val)
-			{
-				a[j++]=arr[i];
-			}
-		}
-		if(arr[n-1]!=val)
-		{
-			a[j++]=arr[n-1];
-		}
-		for(j=0;j<a.length-3;j++)
-		{
-			System.out.println(a[j]);
-		}
-		System.out.println("Size of an array : "+j);
+	public int removeElement(int[] arr, int val) {
+	    int i = 0;
+	    for (int j = 0; j < arr.length; j++) {
+	        if (arr[j] != val) {
+	            arr[i] = arr[j];
+	            i++;
+	        }
+	    }
+	    System.out.println("New llength : "+i);
+	    return i;
 	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int arr[]= {1,3,2,2,5,2};
 		int val=2;
-		int n=arr.length;
 		RemoveEle e = new RemoveEle();
-		e.remove(arr, n, val);
+		e.removeElement(arr, val);
 	}
 }
